@@ -70,11 +70,13 @@ Siga os passos abaixo para clonar o repositório e rodar a aplicação Spring Bo
 Este projeto foi desenvolvido por:
 
 | Nome | GitHub |
-| :--- | :--- |
+|------|--------|
+| Natália Nascimento | [@nataliadsnascimento](https://github.com/nataliadsnascimento) |
+
 
 <br>
 <br>
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE.md] para mais detalhes.
+Este projeto está licenciado sob a Licença MIT
