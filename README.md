@@ -72,6 +72,10 @@ Este projeto foi desenvolvido por:
 | Nome | GitHub |
 |------|--------|
 | Natália Nascimento | [@nataliadsnascimento](https://github.com/nataliadsnascimento) |
+| Kelven Daniel | [@k3lven](https://github.com/k3lven) |
+| Letícia Guardiola | [@leticiaguardiolaabbreus-gif](https://github.com/leticiaguardiolaabreus-gif) |
+| João Marcelo | [@cruz-jmc](https://github.com/cruz-jmc)|
+
 
 
 <br>
