@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 @Data
 @Entity
-public class registroDiario {
+public class RegistroDiario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

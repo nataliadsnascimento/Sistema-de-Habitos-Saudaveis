@@ -15,6 +15,8 @@ public class Usuario {
     private String nome;
     private int idade;
     private String email;
+    private double peso;
+    private double altura;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<Habito> habitos = new ArrayList<>();
