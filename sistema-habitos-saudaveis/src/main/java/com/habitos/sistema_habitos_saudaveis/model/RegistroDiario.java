@@ -1,21 +1,24 @@
 package com.habitos.sistema_habitos_saudaveis.model;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDate;
 
+// REMOVIDO: import jakarta.persistence.*;
+// REMOVIDO: @Entity
+
 @Data
-@Entity
-public class registroDiario {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class RegistroDiario {
+
+    // REMOVIDO: @Id, @GeneratedValue
     private Long id;
 
-    private LocalDate data;
-    private String observacao;
-    private boolean concluido; // basicamente para marcar se fez ou não o habito do dia
+    private LocalDate data; // Atributo definido no guia
+    private String observacao; // Atributo definido no guia
 
-    @ManyToOne
-    @JoinColumn(name = "habito_id")
+    // Relação simples: Referência ao Hábito
+    // REMOVIDO: @ManyToOne, @JoinColumn
     private Habito habito;
+
+    // Campo auxiliar para buscas no JSON (não faz parte do guia, mas é útil)
+    private Long usuarioId;
 }
