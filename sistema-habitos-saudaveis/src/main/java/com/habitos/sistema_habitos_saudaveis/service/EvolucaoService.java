@@ -13,40 +13,40 @@ import java.util.List;
 @Service
 public class EvolucaoService {
 
-    // 1. INJEÇÃO: Integração com o trabalho da Pessoa 3
     @Autowired
     private RegistroRepository registroRepository;
 
     public Evolucao gerarRelatorio(Long usuarioId, LocalDate dataInicio, LocalDate dataFim) {
 
-        System.out.println("Gerando relatório REAL para o Usuário " + usuarioId
-                + " de " + dataInicio + " até " + dataFim);
-
-        // 2. BUSCA: Utiliza o método de filtro do Repositório para obter os dados reais.
         List<RegistroDiario> registrosEncontrados =
                 registroRepository.findByUsuarioIdAndDataBetween(usuarioId, dataInicio, dataFim);
 
         // --- CÁLCULO REAL DE PROGRESSO ---
 
-        // Número de registros (hábitos concluídos)
+        // Total de registros encontrados (valor que você calculou como 4)
         long totalRegistros = registrosEncontrados.size();
 
-        // Número de dias no período (adicionamos 1 para incluir o dia final)
+        // Número de dias no período
         long totalDiasNoPeriodo = ChronoUnit.DAYS.between(dataInicio, dataFim) + 1;
 
         double progresso;
 
         if (totalDiasNoPeriodo > 0) {
-            // Progresso = Registros / Dias no Período
+            // Cálculo do progresso: Registros / Dias no Período
             progresso = (double) totalRegistros / totalDiasNoPeriodo;
         } else {
             progresso = 0.0;
         }
 
-        // Formata para ter no máximo duas casas decimais, por exemplo (opcional)
-        progresso = Math.round(progresso * 100.0) / 100.0;
+        progresso = Math.round(progresso * 100.0) / 100.0; // Arredonda para 2 casas
 
-        // Retorna o objeto Evolucao (Model) com o resultado REAL
-        return new Evolucao("Progresso no período: " + totalDiasNoPeriodo + " dias.", progresso);
+        // Retorna o objeto Evolucao com o novo campo
+        String metaDetalhada = String.format(
+                "Análise do período: %d dias. Meta: %d registros.",
+                totalDiasNoPeriodo,
+                totalRegistros
+        );
+
+        return new Evolucao(metaDetalhada, progresso, totalRegistros);
     }
 }
